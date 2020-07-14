@@ -1,0 +1,40 @@
+.videoPanel {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.videoPanel-infos {
+  background-color: var(--main-bg-highlight-color);
+  margin: 5% 20px 5% 20px;
+  padding: 15px;
+  text-align: justify;
+  min-height: 250px;
+}
+.videoPanel-infos a {
+  float: right;
+}
+
+.videoPanel-frame {
+  /* padding-top: 56.25%; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.videoPanel-frame iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.videoPanel-brickfilm{
+  border: none;
+}
+
+@media screen and (max-width: 650px) {
+  .videoPanel {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 1fr;
+  }
+}

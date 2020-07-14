@@ -1,0 +1,112 @@
+.minifigure {
+  cursor: pointer;
+  width: 20%;
+}
+
+.filmInfo,
+.filmInfoGrid {
+  width: 420px;
+  background-color: var(--main-bg-highlight-color);
+  padding: 25px;
+  /* height: 60%; */
+}
+.filmInfo {
+  text-align: center;
+}
+.filmInfoGrid {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr;
+}
+.filmInfoGrid strong {
+  /* background-color: var(--main-dark-highlight-color); */
+  /* color: white; */
+
+  border-radius: 2px;
+}
+.filmInfoGrid .counter {
+  /* background-color: var(--main-dark-highlight-color); */
+  /* color: white; */
+  font-size: 5vw;
+  font-weight: bold;
+}
+.filmInfo .filmHeading {
+  text-align: center;
+}
+.filmHeading {
+  text-align: center;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.filmDuration {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.filmYear {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  margin-top: 20px;
+}
+.filmFrames {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.filmProduction {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-top: 20px;
+}
+.filmCrew {
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: justify;
+  line-height: 2em;
+  margin: 5px 0 5px 0;
+}
+.filmPrices {
+  grid-row-start: 5;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: inline;
+}
+
+.filmBox {
+  padding: 5% 0 5% 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr; */
+  /* padding: 4%; */
+}
+
+.filmwrapper {
+  background: var(--main-bg-highlight-color);
+}
+
+.clickMe{
+  font-family: "Inconsolata";
+  font-size: 2em;
+  margin-top: 20%;
+}
+
+@media screen and (min-width: 1460px) {
+  .filmInfoGrid .counter {
+    font-size: 3vw;
+    font-weight: bold;
+  }
+}

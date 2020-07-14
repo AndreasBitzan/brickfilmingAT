@@ -1,0 +1,56 @@
+.interactiveBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 4%;
+}
+.interactiveBox .btnInteractive,
+.interactiveBox .btnInteractiveBlocked {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+  font-family: "Inconsolata";
+  line-height: 200%;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+.interactiveBox .btnInteractive {
+  cursor: pointer;
+
+  background-color: green;
+}
+.interactiveBox .btnInteractiveBlocked {
+  background-color: red;
+}
+.interactiveBox .btnInteractive:hover {
+  background-color: var(--btn-highlighter-color);
+}
+.interactiveBox .btnInteractive:active {
+  background-color: #c1d9ff;
+}
+.interactiveBox .btnRestart {
+  background-color: var(--main-dark-highlight-color);
+}
+.interactiveVideo {
+  width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .interactiveBox {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 2%;
+    justify-content: center;
+  }
+  .interactiveVidGrid {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .interactivePicGrid {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+}
