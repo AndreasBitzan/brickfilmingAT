@@ -1,0 +1,26 @@
+
+.dropdown .dropbtn{
+    margin: 0;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: "Inconsolata";
+    background-color: inherit;
+    display: inline;
+    font-size: inherit;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    min-width: 50px;
+    background-color: var(--main-dark-color);
+    padding: 20px 10px 10px 10px;
+}
+.dropdown-content a{
+    display: block;
+    padding: 10px 5px 5px 5px;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}

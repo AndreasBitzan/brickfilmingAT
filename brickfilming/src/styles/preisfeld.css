@@ -1,0 +1,40 @@
+.preisfeld {
+  display: inline-grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr 1fr;
+  background-color: var(--main-dark-highlight-color);
+  color: white;
+  padding: 10px 10px 5px 10px;
+  margin: 5px 0 0 0;
+  width: 170px;
+  height: 60px;
+}
+.preisfeld-icon {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  font-size: 1.2em;
+  padding-top: 40%;
+}
+.inlinePrice {
+  display: inline;
+  margin: 5px;
+}
+.preisfeld-placing {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border-bottom: solid 2px white;
+  font-size: 0.7em;
+  width: 130px;
+}
+.preisfeld-eventName {
+  font-size: 0.6em;
+  padding-top: 5px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}

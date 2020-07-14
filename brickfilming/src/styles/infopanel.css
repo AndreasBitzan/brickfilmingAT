@@ -1,0 +1,121 @@
+.infoPanel {
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: repeat(10, 1fr);
+
+  position: relative;
+}
+.infoPanel img {
+  transition: all 0.8s;
+}
+.alignLeft {
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+.alignRight {
+  grid-column-start: 6;
+  grid-column-end: 11;
+  z-index: 0;
+}
+.infoBox {
+  margin: 10% 20% 10% 20%;
+  padding: 20px;
+  background-color: var(--main-bg-highlight-color);
+  z-index: 5;
+}
+.infoBox p {
+  text-align: justify;
+  padding: 5px;
+}
+.infoHeader {
+  text-align: center;
+  font-size: 2em;
+  margin: 0px 5px 25px 5px;
+}
+.textTextWindow {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 5%;
+}
+.infoWindow {
+  display: block;
+  background-color: var(--main-bg-highlight-color);
+  padding: 20px;
+  text-align: center;
+  max-width: 450px;
+  margin: 10px;
+}
+.infoBox a {
+  float: right;
+  margin: 20px 0 0 0;
+}
+.infoWindow p,
+.fancyInfoWindow p {
+  text-align: justify;
+}
+
+.fancyInfoWindow {
+  background: var(--main-bg-highlight-color);
+  text-align: center;
+  padding: 40px;
+  margin: 10px;
+  max-width: 300px;
+}
+.fancyInfoWindow h3 {
+  margin: 0;
+}
+.countdown {
+  text-align: center;
+  color: white;
+  font-size: 5vw;
+  background-color: var(--main-dark-highlight-color);
+  opacity: 0.9;
+  padding: 10px;
+}
+.customImgWrapper {
+  width: 100% !important;
+  height: 100% !important;
+}
+.websiteLinks {
+  padding: 0;
+}
+.websiteLinks li {
+  list-style-type: none;
+  margin: 15px 0 15px 0;
+}
+.websiteLinks a {
+  padding: 4px;
+}
+
+@media screen and (max-width: 1400px) {
+  .infoBox {
+    margin: 10%;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .infoBox {
+    margin: 5%;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .infoPanel {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto;
+  }
+  .alignLeft {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    z-index: 5;
+  }
+  .alignRight {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    z-index: 0;
+  }
+  .infoBox {
+    margin: 10% 6% 10% 6%;
+  }
+}

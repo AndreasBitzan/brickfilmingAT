@@ -1,0 +1,75 @@
+nav {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main-dark-color);
+  box-shadow: 0px 3px 10px var(--main-dark-highlight-color);
+}
+
+nav,
+ul {
+  margin: 0;
+}
+.Logo {
+  padding: 20px;
+}
+
+nav li {
+  display: inline-block;
+  padding: 20px;
+}
+nav ul a:hover {
+  transition: all 0.6s;
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
+}
+.toggle {
+  float: right;
+  display: none;
+  z-index: 110;
+}
+nav label {
+  position: absolute;
+  right: 0;
+  display: none;
+  line-height: 15px;
+  font-size: 30px;
+}
+.activeLink {
+  border-bottom: 1px solid white !important;
+  padding-bottom: 3px;
+}
+
+@media only screen and (max-width: 570px) {
+  nav label {
+    float: right;
+    display: inline;
+    cursor: pointer;
+    color: white;
+    padding: 22px 20px 0 0;
+
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+  }
+  nav a {
+    display: block;
+  }
+  nav ul {
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  .toggle:checked + .navListe {
+    display: block;
+    z-index: 110;
+  }
+  .openedMenu {
+    display: block;
+  }
+  .openedMenu li {
+    width: 100%;
+  }
+}
