@@ -25,39 +25,39 @@ const Template = props => {
             )}
             {props.isActive === "filme" ? (
               <DropDown name="Filme" isActive>
-                <Link to="mordindermanege/">Mord i.d. Man.</Link>
-                <Link to="roll/">Roll</Link>
-                <Link to="endangered/">Endangered</Link>
+                <Link to="/mordindermanege/">Mord i.d. Man.</Link>
+                <Link to="/roll/">Roll</Link>
+                <Link to="/endangered/">Endangered</Link>
               </DropDown>
             ) : (
               <DropDown name="Filme">
-                <Link to="mordindermanege/">Mord i.d. Man.</Link>
-                <Link to="roll/">Roll</Link>
-                <Link to="endangered/">Endangered</Link>
+                <Link to="/mordindermanege/">Mord i.d. Man.</Link>
+                <Link to="/roll/">Roll</Link>
+                <Link to="/endangered/">Endangered</Link>
               </DropDown>
             )}
             {props.isActive === "workshops" ? (
-              <Navlink name="Workshops" to="workshops" isActive />
+              <Navlink name="Workshops" to="/workshops" isActive />
             ) : (
-              <Navlink name="Workshops" to="workshops" />
+              <Navlink name="Workshops" to="/workshops" />
             )}
             {props.isActive === "anfragen" ? (
-              <Navlink name="Anfragen" to="kontakt" isActive />
+              <Navlink name="Anfragen" to="/kontakt" isActive />
             ) : (
-              <Navlink name="Anfragen" to="kontakt" />
+              <Navlink name="Anfragen" to="/kontakt" />
             )}
             <Navlink name="home" to="/" />
           </MenuBar>
         ) : (
           <MenuBar>
-            <Navlink name="How to" to="howtobrickfilm" />
+            <Navlink name="How to" to="/howtobrickfilm" />
             <DropDown name="Filme">
-              <Link to="mordindermanege/">Mord i.d. Man.</Link>
-              <Link to="roll/">Roll</Link>
-              <Link to="endangered/">Endangered</Link>
+              <Link to="/mordindermanege/">Mord i.d. Man.</Link>
+              <Link to="/roll/">Roll</Link>
+              <Link to="/endangered/">Endangered</Link>
             </DropDown>
-            <Navlink name="Workshops" to="workshops" />
-            <Navlink name="Anfragen" to="kontakt" />
+            <Navlink name="Workshops" to="/workshops" />
+            <Navlink name="Anfragen" to="/kontakt" />
             <Navlink name="home" to="/" isActive/>
             
           </MenuBar>

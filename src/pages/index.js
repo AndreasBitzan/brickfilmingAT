@@ -17,7 +17,7 @@ const IndexPage = props => {
       <SEO title="Home" />
       <Header
         type="video"
-        video="BestOfWeb.mp4"
+        video="/BestOfWeb.mp4"
         isTitleLeft={true}
         firstLine="A&M Studios"
         secondLine="Brickfilms"
