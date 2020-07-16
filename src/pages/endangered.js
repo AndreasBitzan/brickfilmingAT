@@ -108,7 +108,7 @@ query {
     }
     endangered: file(relativePath: { eq: "endangered/Endangered.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
+        fluid(maxWidth: 2500) {
           ...GatsbyImageSharpFluid
         }
       }

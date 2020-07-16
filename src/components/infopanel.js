@@ -4,7 +4,6 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 import config from "react-reveal/globals"
 import Bounce from "react-reveal/Bounce"
-import Fade from "react-reveal/Fade"
 
 config({ ssrFadeout: true })
 
@@ -41,6 +40,7 @@ class Infobox extends React.Component {
           {this.props.isTitleLeft ? null : (
             <Img
               alt="Brickfilmen"
+              fadeIn={false}
               style={{ zIndex: "2" }}
               className="alignLeft"
               fluid={this.props.imgData}
@@ -79,6 +79,7 @@ class Infobox extends React.Component {
           )}
           {this.props.isTitleLeft ? (
             <Img
+              fadeIn={false}
               alt="Brickfilmen"
               fluid={this.props.imgData}
               className="alignRight"
@@ -126,102 +127,52 @@ class Infobox extends React.Component {
         </div>
       )
     } else if (this.props.type === "moving") {
-      if (!this.props.isTitleLeft) {
-        return (
-          <div className="infoPanel">
-            {this.state.displayFirst ? (
-              <div
-                className="alignLeft"
-                onClick={() => this.togglePicture()}
-                onMouseOver={() => this.changetoSecond()}
-                onMouseLeave={() => this.changetoFirst()}
-                onTouchStart={() => this.togglePicture()}
-                
-              >
-                <Img
-                  alt="Brickfilmen"
-                  style={{ zIndex: "2" }}
-                  fluid={this.props.imgData}
-                />
-              </div>
-            ) : (
-              <div
-                className="alignLeft"
-                onClick={() => this.togglePicture()}
-                onMouseOver={() => this.changetoSecond()}
-                onMouseLeave={() => this.changetoFirst()}
-                onTouchStart={() => this.togglePicture()}
-                
-              >
-                <Fade>
-                  <Img
-                    alt="Brickfilmen"
-                    style={{ zIndex: "2" }}
-                    fluid={this.props.imgData2}
-                  />
-                </Fade>
-              </div>
-            )}
-            <Bounce right delay={1}>
-              <div className="infoBox alignRight">
-                <h3 className="infoHeader">{this.props.heading}</h3>
-                <p>{this.props.children}</p>
-                {this.props.to !== undefined ? (
-                  <Link to={this.props.to}>Entdecken</Link>
-                ) : null}
-              </div>
-            </Bounce>
+      return (
+        <div className="infoPanel">
+          <div
+            className={`pictureSwitcher ${
+              this.props.isTitleLeft ? "alignRight" : "alignLeft"
+            }`}
+            onClick={() => this.togglePicture()}
+            onMouseOver={() => this.changetoSecond()}
+            onMouseLeave={() => this.changetoFirst()}
+            onTouchStart={() => this.togglePicture()}
+          >
+            <Img
+              alt="Brickfilmen"
+              className={`top ${this.state.displayFirst ? "" : "fadedOut"}`}
+              fadeIn={false}
+              style={{ zIndex: "3" }}
+              fluid={this.props.imgData}
+            />
+            <Img
+              alt="Brickfilmen"
+              className="bottom"
+              fadeIn={false}
+              style={{ zIndex: "2" }}
+              fluid={this.props.imgData2}
+            />
           </div>
-        )
-      } else {
-        return (
-          <div className="infoPanel">
-            <Bounce left delay={1}>
-              <div className="infoBox alignLeft">
-                <h3 className="infoHeader">{this.props.heading}</h3>
-                <p>{this.props.children}</p>
-                {this.props.to !== undefined ? (
-                  <Link to={this.props.to}>Entdecken</Link>
-                ) : null}
-              </div>
-            </Bounce>
 
-            {this.state.displayFirst ? (
-              <div
-                className="alignRight"
-                onClick={() => this.togglePicture()}
-                onMouseOver={() => this.changetoSecond()}
-                onMouseLeave={() => this.changetoFirst()}
-                onTouchStart={() => this.togglePicture()}
-                
-              >
-                <Img
-                  alt="Brickfilmen"
-                  style={{ zIndex: "2" }}
-                  fluid={this.props.imgData}
-                />
-              </div>
-            ) : (
-              <div
-                className="alignRight"
-                onClick={() => this.togglePicture()}
-                onMouseOver={() => this.changetoSecond()}
-                onMouseLeave={() => this.changetoFirst()}
-                onTouchStart={() => this.togglePicture()}
-                
-              >
-                <Fade>
-                  <Img
-                    alt="Brickfilmen"
-                    style={{ zIndex: "2" }}
-                    fluid={this.props.imgData2}
-                  />
-                </Fade>
-              </div>
-            )}
-          </div>
-        )
-      }
+          <Bounce
+            right={this.props.isTitleLeft ? false : true}
+            left={this.props.isTitleLeft ? true : false}
+            delay={1}
+          >
+            <div
+              className={`infoBox ${
+                this.props.isTitleLeft ? "alignLeft" : "alignRight"
+              }`}
+            >
+              <h3 className="infoHeader">{this.props.heading}</h3>
+              <p>{this.props.children}</p>
+              {this.props.to !== undefined ? (
+                <Link to={this.props.to}>Entdecken</Link>
+              ) : null}
+            </div>
+          </Bounce>
+        </div>
+      )
     } else {
       return <div className="infoPanel" />
     }

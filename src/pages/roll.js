@@ -106,7 +106,7 @@ query {
   }
     roll: file(relativePath: { eq: "roll/roll.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
+        fluid(maxWidth: 1000, quality:100) {
           ...GatsbyImageSharpFluid
         }
       }

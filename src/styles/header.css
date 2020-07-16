@@ -51,7 +51,7 @@ h1 {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: var(--main-dark-color);
   top: 0;
   z-index: 80;
 }

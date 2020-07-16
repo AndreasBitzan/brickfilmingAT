@@ -106,7 +106,7 @@ const Content = (props)=>{
     </Videobox>
     <SubHeader title="Das Set Design" />
     <InfoPanel type="moving"
-      isTitleLeft={true}
+      isTitleLeft
       heading="Mehrere Ebenen"
       imgData={props.data.kulisse1.childImageSharp.fluid} 
       imgData2={props.data.kulisse2.childImageSharp.fluid}>
@@ -115,7 +115,7 @@ const Content = (props)=>{
       Ein Vordergrund und Hintergrund geben Tiefe dazu. <strong>Bewege die Maus über das Bild oder tippe darauf </strong>
       um zu sehen wie groß der Unterschied ist!
     </InfoPanel>
-    <SubHeader title="Beleuchtung" />
+   <SubHeader title="Beleuchtung" />
     <InfoPanel type="moving"
       isTitleLeft={false}
       heading="LEDs und Farblichter"
@@ -151,7 +151,7 @@ const Content = (props)=>{
     </InfoPanel>
     <SubHeader title="Lass die Figuren reden" />
     <InfoPanel type="moving"
-      isTitleLeft={true}
+      isTitleLeft
       heading="Mundanimation"
       imgData={props.data.mundanimation1.childImageSharp.fluid} 
       imgData2={props.data.mundanimation2.childImageSharp.fluid} >
@@ -159,7 +159,7 @@ const Content = (props)=>{
       Zuerst werden verschiedene Minifiguren-Köpfe bei gutem Licht fotografiert, der Mund in Photoshop ausgeschnitten
       und dann über die Figur in der Szene Bild für Bild die Münder passend zum Ton ein.
       <strong> Bewege die Maus über das Bild oder tippe darauf!</strong>
-    </InfoPanel>
+    </InfoPanel> 
     <SubHeader title="Ein Blick hinter die Kulissen" />
     <Videobox heading="Voll von Effeckten" 
               videoLink={"https://www.youtube.com/embed/6-f4f0iw8WA"}

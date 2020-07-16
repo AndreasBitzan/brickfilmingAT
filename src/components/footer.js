@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 const AddressField = () => {
   return (
     <address>
-      <p>Andreas Bitzan</p>
+      <p>Andreas Bitzan, Alexander Leitner</p>
       <p>Klagenfurt, Austria</p>
       <a href="https://www.youtube.com/user/Cocotatam/" className="iconLink">
         <FaYoutube />
@@ -30,7 +30,7 @@ const Footer = props => {
   return (
     <footer className="footer">
       <article>
-        <h3>A&M Studios Brickfilms</h3>
+        <h3>A&M Studios Brickfilms und Legostudio01</h3>
         <AddressField />
       </article>
       {props.siteName !== undefined ? <p>Seite: {props.siteName}</p> : null}

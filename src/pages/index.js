@@ -19,8 +19,7 @@ const IndexPage = props => {
         type="video"
         video="/BestOfWeb.mp4"
         isTitleLeft={true}
-        firstLine="A&M Studios"
-        secondLine="Brickfilms"
+        firstLine="Brickfilms.AT"
         btnTitle="Entdecken"
         loadingImg={props.data.preview.childImageSharp.fluid}
       />

@@ -8,7 +8,9 @@ import ReactResizeDetector from "react-resize-detector"
 const Minifigure = props => {
   return (
     <div className="minifigure" onClick={() => props.onClick()}>
-      <Img loading="eager" critical fadeIn="false" alt="Eine Minifigur mit geshlossenen Augen" fluid={props.imgData} />
+      <Img  className={`bottom ${props.awake ? "awake" : ""}`}  loading="eager" fadeIn="false" alt="Eine Minifigur mit geshlossenen Augen" fluid={props.imgAsleep} />
+      <Img className={`top`} loading="eager" fadeIn="false" alt="Eine Minifigur mit offenen Augen" fluid={props.imgAwake} />
+
     </div>
   )
 }
@@ -87,17 +89,9 @@ class Filmbox extends React.Component {
   render() {
     return (
       <div className="filmBox">
-        {this.state.awake ? (
-          <Minifigure
-            imgData={this.props.imgAwake}
-            onClick={this.handleClick}
-          />
-        ) : (
-          <Minifigure
-            imgData={this.props.imgAsleep}
-            onClick={this.handleClick}
-          />
-        )}
+
+       <Minifigure  imgAwake={this.props.imgAwake} imgAsleep={this.props.imgAsleep} awake={this.state.awake}
+                    onClick={this.handleClick} />
 
         {this.state.awake ? (
           <FilmInfo heading={this.props.heading}>
