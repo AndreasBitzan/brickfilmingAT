@@ -21,6 +21,9 @@ body {
   font-weight: 500;
   background: var(--main-bg-color);
 }
+*, *:before, *:after {
+  box-sizing: border-box !important;
+}
 nav {
   position: fixed;
   width: 100%;

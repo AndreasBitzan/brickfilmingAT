@@ -19,9 +19,9 @@ const Template = props => {
         {props.isActive !== undefined ? (
           <MenuBar>
             {props.isActive === "howto" ? (
-              <Navlink name="How to" to="howtobrickfilm" isActive />
+              <Navlink name="How to" to="/howtobrickfilm" isActive />
             ) : (
-              <Navlink name="How to" to="howtobrickfilm" />
+              <Navlink name="How to" to="/howtobrickfilm" />
             )}
             {props.isActive === "filme" ? (
               <DropDown name="Filme" isActive>

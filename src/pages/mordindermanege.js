@@ -109,7 +109,7 @@ query {
   }
     headerback: file(relativePath: { eq: "mordindermanege/mordindermanege.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
+        fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid
         }
       }

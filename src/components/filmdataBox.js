@@ -8,7 +8,7 @@ import ReactResizeDetector from "react-resize-detector"
 const Minifigure = props => {
   return (
     <div className="minifigure" onClick={() => props.onClick()}>
-      <Img alt="Eine Minifigur mit geshlossenen Augen" fluid={props.imgData} />
+      <Img loading="eager" critical fadeIn="false" alt="Eine Minifigur mit geshlossenen Augen" fluid={props.imgData} />
     </div>
   )
 }

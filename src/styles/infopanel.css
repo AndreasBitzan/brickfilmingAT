@@ -88,6 +88,10 @@
   padding: 4px;
 }
 
+.parallax-outer{
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 1400px) {
   .infoBox {
     margin: 10%;

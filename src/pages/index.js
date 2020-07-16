@@ -157,7 +157,7 @@ export const pageQuery = graphql`
 
     bgImg: file(relativePath: { eq: "bgImg.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
+        fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid
         }
       }

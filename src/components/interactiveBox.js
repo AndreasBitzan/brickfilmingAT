@@ -7,6 +7,7 @@ import Animation1 from "../static/animation1.mp4"
 import Animation2 from "../static/animation2.mp4"
 import Animation3 from "../static/animation3.mp4"
 import Animation4 from "../static/animation4.mp4"
+import Gehen from "../static/gehen.mp4"
 
 
 const InteractiveWindow = (props)=>{
@@ -40,7 +41,7 @@ const InteractivePictures=(props)=>{
   return(
       <div className="picPanel interactiveVidGrid">
           <h2>Das Foto</h2>
-          <Img alt="Der aktuelle Frame" fluid={props.data} />
+          <Img loading="eager" fadeIn={false} alt="Der aktuelle Frame" fluid={props.data} />
       </div>
   );
 }
@@ -81,7 +82,7 @@ class InteractiveBox extends React.Component{
             this.props.data.bild4.childImageSharp.fluid,
             Animation4,
             this.props.data.bild5.childImageSharp.fluid,
-            "gehen.mp4",
+            Gehen,
             this.props.data.bild6.childImageSharp.fluid,
          ];
          return images[this.state.currentStep];
