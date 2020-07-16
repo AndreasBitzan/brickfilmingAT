@@ -10,7 +10,7 @@ import SingleSlide from "../components/singleslide"
 import FancyInfoPanel from "../components/fancyinfopanel"
 import InfoWindow from "../components/infowindow"
 import Fade from "react-reveal/Fade"
-
+import Highlightreel from "../static/BestOfWeb.mp4"
 const IndexPage = props => {
   return (
     <Template>
@@ -24,7 +24,7 @@ const IndexPage = props => {
         btnTitle="Entdecken"
         loadingImg={props.data.preview.childImageSharp.fluid}
       />
-      <SubHeader title="Was ist ein Brickfilm?" id="entdecken" />
+      <SubHeader title="Was ist ein Brickfilm??" id="entdecken" />
       <InfoPanel
         type="picture"
         isTitleLeft={false}

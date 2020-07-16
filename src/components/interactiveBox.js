@@ -3,7 +3,10 @@ import "../styles/interactiveBox.css";
 import {FaCameraRetro} from "react-icons/fa"
 import { graphql, StaticQuery } from "gatsby";
 import Img from "gatsby-image";
-
+import Animation1 from "../static/animation1.mp4"
+import Animation2 from "../static/animation2.mp4"
+import Animation3 from "../static/animation3.mp4"
+import Animation4 from "../static/animation4.mp4"
 
 
 const InteractiveWindow = (props)=>{
@@ -70,13 +73,13 @@ class InteractiveBox extends React.Component{
     getCurrentImg(){
         let images=[
             this.props.data.bild1.childImageSharp.fluid,
-            "animation1.mp4",
+            Animation1,
             this.props.data.bild2.childImageSharp.fluid,
-            "animation2.mp4",
+            Animation2,
             this.props.data.bild3.childImageSharp.fluid,
-            "animation3.mp4",
+            Animation3,
             this.props.data.bild4.childImageSharp.fluid,
-            "animation4.mp4",
+            Animation4,
             this.props.data.bild5.childImageSharp.fluid,
             "gehen.mp4",
             this.props.data.bild6.childImageSharp.fluid,

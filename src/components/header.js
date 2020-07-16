@@ -8,6 +8,7 @@ import BackgroundImage from "gatsby-background-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"
 import AnchorLink from "react-anchor-link-smooth-scroll"
+import Highlightreel from "../static/BestOfWeb.mp4"
 
 const HeaderPlayer = props => {
   return (
@@ -29,10 +30,10 @@ const HeaderPlayer = props => {
         fluid={true}
         muted
         controls={false}
-        src={props.video}
         type="video/mp4"
         onPlay={() => props.onPlay()}
       >
+        <source src={Highlightreel} type="video/mp4" />
         <ControlBar autoHide={true} disableDefaultControls={true}>
           <PlayToggle />
         </ControlBar>

@@ -1,6 +1,8 @@
 import React from "react"
 import CountUp from "react-countup"
 
+
+
 const FilmMetaData = props => {
   let priceChildren = []
   for (let i = 0; i < props.children.length; i++) {
