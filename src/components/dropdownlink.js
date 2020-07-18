@@ -1,15 +1,38 @@
 import React from "react"
-import "../styles/dropdownlink.css"
+import "../styles/dropdownlink.scss"
+import ReactResizeDetector from "react-resize-detector"
 
-const DropDown = (props) => {
+class DropDown extends React.Component{
+  constructor(props){
+    super(props)
+    this.resizeSubMenu = this.resizeSubMenu.bind(this)
+  }
+
+  resizeSubMenu(){
+
+
+      let subMenu=document.querySelector(".dropdown-content");
+      let mainMenu=document.querySelector("#navList");
+      if(window.innerWidth>570){
+      subMenu.style.width=`${mainMenu.clientWidth}px`;
+      }
+
+  }
+  render(){
   return (
     <li className="dropdown">
-        <button className={props.isActive ? "activeLink dropbtn" : "dropbtn"}>{props.name}</button>
+        <ReactResizeDetector
+          handleWidth
+          handleHeight
+          onResize={() => this.resizeSubMenu()}
+        />
+        <button className={this.props.isActive ? "activeLink dropbtn" : "dropbtn"}>{this.props.name}</button>
         <div className="dropdown-content">
-            {props.children}
+            {this.props.children}
         </div>
     </li>
   )
+  }
 }
 
 export default DropDown

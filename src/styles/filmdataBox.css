@@ -1,8 +1,11 @@
 .minifigure {
   cursor: pointer;
-  width: 20%;
+  flex-basis: 35%;
   position: relative;
   height: 32rem;
+}
+.minifigure img{
+  object-fit: contain !important;
 }
 .minifigure .bottom{ 
   z-index: 5;
@@ -126,5 +129,11 @@
   .filmInfoGrid .counter {
     font-size: 3vw;
     font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .minifigure {
+    flex-basis: 100%;
   }
 }

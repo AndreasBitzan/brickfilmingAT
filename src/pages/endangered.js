@@ -10,6 +10,8 @@ import Preisfeld from "../components/preisfeld";
 import Videobox from "../components/videopanel";
 import FilmMetaData from "../components/filmmetadata";
 import SEO from "../components/seo";
+import BtsGallery from "../components/btsgallery"
+
 
 
 const Content = (props)=>{
@@ -80,9 +82,8 @@ const Content = (props)=>{
               </Videobox>
             
             <SubHeader title="Behind the Scenes" />
-            <SliderBox>
-              {allSlides}
-            </SliderBox>
+            <BtsGallery images={props.data.allImages} />
+
                      
             </Template>
             

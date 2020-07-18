@@ -10,14 +10,11 @@ import FilmdataBox from "../components/filmdataBox";
 import Preisfeld from "../components/preisfeld";
 import FilmMetaData from "../components/filmmetadata";
 import SEO from "../components/seo";
+import BtsGallery from "../components/btsgallery"
 
 
 const Content = (props)=>{
   const images = Array.from(props.data.allImages.edges);
-  const allSlides = images.map(({ node }) => {
-    return (<SingleSlide imgData={node.childImageSharp.fluid} />)
-  })
-
     return(
         
       <Template isActive="filme">
@@ -79,11 +76,9 @@ const Content = (props)=>{
               </Videobox>
             
             <SubHeader title="Behind the Scenes" />
+            <BtsGallery images={props.data.allImages} />
 
-            <SliderBox>
-              {allSlides}
-            </SliderBox>
-
+           
 
          </Template>
             
@@ -130,15 +125,17 @@ query {
       }
       awake: file(relativePath: { eq: "mordindermanege/awake.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 700, quality: 100) {
             ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }
       asleep: file(relativePath: { eq: "mordindermanege/asleep.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 700, quality: 100) {
             ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }

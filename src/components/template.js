@@ -3,75 +3,87 @@ import MenuBar from "../components/menubar"
 import Navlink from "../components/navlink"
 import DropDown from "../components/dropdownlink"
 import Footer from "../components/footer"
-import {Link} from "gatsby"
-
+import Img from "gatsby-image"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Template = props => {
-    let mainChildren = []
-    for (let i = 0; i < props.children.length; i++) {
-      if (i > 1) {
-        mainChildren.push(props.children[i])
+  console.log(props)
+  let mainChildren = []
+  for (let i = 0; i < props.children.length; i++) {
+    if (i > 1) {
+      mainChildren.push(props.children[i])
+    }
+  }
+
+  const data = useStaticQuery(graphql`
+    query {
+      allThumbnails: allFile(
+        filter: { relativePath: { regex: "/thumbnails/" } }
+      ) {
+        edges {
+          node {
+            id
+            name
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
-    return (
-     
-      <div id="content">
-        {props.isActive !== undefined ? (
-          <MenuBar>
-            {props.isActive === "howto" ? (
-              <Navlink name="How to" to="/howtobrickfilm" isActive />
-            ) : (
-              <Navlink name="How to" to="/howtobrickfilm" />
-            )}
-            {props.isActive === "filme" ? (
-              <DropDown name="Filme" isActive>
-                <Link to="/mordindermanege/">Mord i.d. Man.</Link>
-                <Link to="/roll/">Roll</Link>
-                <Link to="/endangered/">Endangered</Link>
-              </DropDown>
-            ) : (
-              <DropDown name="Filme">
-                <Link to="/mordindermanege/">Mord i.d. Man.</Link>
-                <Link to="/roll/">Roll</Link>
-                <Link to="/endangered/">Endangered</Link>
-              </DropDown>
-            )}
-            {props.isActive === "workshops" ? (
-              <Navlink name="Workshops" to="/workshops" isActive />
-            ) : (
-              <Navlink name="Workshops" to="/workshops" />
-            )}
-            {props.isActive === "anfragen" ? (
-              <Navlink name="Anfragen" to="/kontakt" isActive />
-            ) : (
-              <Navlink name="Anfragen" to="/kontakt" />
-            )}
-            <Navlink name="home" to="/" />
-          </MenuBar>
-        ) : (
-          <MenuBar>
-            <Navlink name="How to" to="/howtobrickfilm" />
-            <DropDown name="Filme">
-              <Link to="/mordindermanege/">Mord i.d. Man.</Link>
-              <Link to="/roll/">Roll</Link>
-              <Link to="/endangered/">Endangered</Link>
-            </DropDown>
-            <Navlink name="Workshops" to="/workshops" />
-            <Navlink name="Anfragen" to="/kontakt" />
-            <Navlink name="home" to="/" isActive/>
-            
-          </MenuBar>
-        )}
-        {props.children[0]}
-        {props.children[1]}
-  
-        <main>
-        {mainChildren}
-        </main>
-  
-        <Footer />
-      </div>
-    )
+  `)
+  const GetFluidByName = imgName => {
+    return data.allThumbnails.edges.find(currentImg => currentImg.node.name == imgName)
   }
-  
-  export default Template
+  return (
+    <div id="content">
+
+        <MenuBar>
+          <Navlink
+            name="How to"
+            to="/howtobrickfilm"
+            isActive={props.isActive === "howto" ? true : false}
+          />
+
+          <DropDown
+            name="Filme"
+            isActive={props.isActive === "filme" ? true : false}
+          >
+            <Link to="/mordindermanege/"><Img fluid={GetFluidByName("mordindermanege").node.childImageSharp.fluid} />
+            <div className="thumbnail__overlay"><span>Mord i. d. Manege</span></div>
+            </Link>
+            <Link to="/roll/"><Img fluid={GetFluidByName("roll").node.childImageSharp.fluid} />
+            <div className="thumbnail__overlay"><span>Roll</span></div></Link>
+            <Link to="/endangered/"><Img fluid={GetFluidByName("endangered").node.childImageSharp.fluid} />
+            <div className="thumbnail__overlay"><span>Endangered</span></div></Link>
+            <Link to="/endangered/"><Img fluid={GetFluidByName("timeforsale").node.childImageSharp.fluid} /></Link>
+          </DropDown>
+
+          <Navlink
+            name="Workshops"
+            to="/workshops"
+            isActive={props.isActive === "workshops" ? true : false}
+          />
+
+          <Navlink
+            name="Anfragen"
+            to="/kontakt"
+            isActive={props.isActive === "anfragen" ? true : false}
+          />
+
+          <Navlink name="home" to="/" isActive={props.isActive==undefined ? true : false} />
+        </MenuBar>
+    
+      {props.children[0]}
+      {props.children[1]}
+
+      <main>{mainChildren}</main>
+
+      <Footer />
+    </div>
+  )
+}
+
+export default Template

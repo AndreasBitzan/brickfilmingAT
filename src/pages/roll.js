@@ -10,6 +10,8 @@ import Preisfeld from "../components/preisfeld";
 import Videobox from "../components/videopanel";
 import FilmMetaData from "../components/filmmetadata";
 import SEO from "../components/seo";
+import BtsGallery from "../components/btsgallery"
+
 
 const Content = (props)=>{
   const images = Array.from(props.data.allImages.edges);
@@ -18,7 +20,7 @@ const Content = (props)=>{
   })
     return(
         
-      <Template isActive="filme">
+      <Template isActive="filme" thumbnails={props.data.allThumbnails.edges}>
           <SEO title="Roll - Steinerei 2017" />
         
                 {/* HEADER: isTitleLeft legt layout fest, Optionen für 2 TitelLines, die dieselbe Scaling danach haben. Option für Btn */}
@@ -79,9 +81,7 @@ const Content = (props)=>{
               </Videobox>
             
             <SubHeader title="Behind the Scenes" />
-            <SliderBox>
-              {allSlides}
-            </SliderBox>
+            <BtsGallery images={props.data.allImages} />
 
         </Template>
     );
@@ -98,6 +98,19 @@ query {
         name
         childImageSharp {
           fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+       }
+      }
+    }
+  }
+  allThumbnails: allFile(filter: {relativePath: {regex: "/thumbnails/"} }) {
+    edges{
+      node{
+        id
+        name
+        childImageSharp {
+          fluid(maxWidth: 700) {
             ...GatsbyImageSharpFluid
           }
        }
