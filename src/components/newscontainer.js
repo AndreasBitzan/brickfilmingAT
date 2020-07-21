@@ -80,7 +80,7 @@ export default ({ props }) => (
   <StaticQuery
     query={graphql`
       query {
-        allWpPost(limit: 2) {
+        allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "brickfilm"}}}}}, limit: 2) {
           nodes {
             slug
             excerpt
