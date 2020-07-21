@@ -53,3 +53,32 @@
 .hiddenContent{
     display: block;
 }
+
+@media only screen and (max-width: 850px){
+    .news-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    
+        &__posting:first-child{
+            border-right: none;
+            border-bottom: 2px solid white;
+        }
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .news-container{
+        &__posting{
+            &__date{
+
+    
+                font-size: 1rem;
+                
+                &__day{
+                    padding-right: 0.5rem;
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
