@@ -10,7 +10,8 @@ import SingleSlide from "../components/singleslide"
 import FancyInfoPanel from "../components/fancyinfopanel"
 import InfoWindow from "../components/infowindow"
 import Fade from "react-reveal/Fade"
-import Highlightreel from "../static/BestOfWeb.mp4"
+import NewsContainer from "../components/newscontainer"
+
 const IndexPage = props => {
   return (
     <Template>
@@ -23,7 +24,9 @@ const IndexPage = props => {
         btnTitle="Entdecken"
         loadingImg={props.data.preview.childImageSharp.fluid}
       />
-      <SubHeader title="Was ist ein Brickfilm??" id="entdecken" />
+      <SubHeader title="Neuigkeiten" id="news_header" />
+      <NewsContainer />
+      <SubHeader title="Was ist ein Brickfilm?" id="entdecken" />
       <InfoPanel
         type="picture"
         isTitleLeft={false}
@@ -37,6 +40,7 @@ const IndexPage = props => {
         sind dabei ca. 15 Bilder notwendig! Erfahre hier mehr darüber, wie ein
         Film entsteht!
       </InfoPanel>
+    
 
       <SubHeader title="Unsere Filme" id="242" />
       <SliderBox>

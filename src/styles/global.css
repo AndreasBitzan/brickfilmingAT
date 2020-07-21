@@ -24,6 +24,10 @@ body {
 *, *:before, *:after {
   box-sizing: border-box !important;
 }
+.content-container{
+  margin: 0 auto;
+  max-width: 95rem;
+}
 nav {
   position: fixed;
   width: 100%;
@@ -51,7 +55,6 @@ header a,
 main a:hover,
 .infoPanel a:hover {
   transition: all 0.6s;
-  font-weight: 800;
   cursor: pointer;
 }
 .btnYoutube {

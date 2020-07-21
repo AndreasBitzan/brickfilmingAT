@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 import config from "react-reveal/globals"
 import Bounce from "react-reveal/Bounce"
+import FanyButton from "../components/fancybutton"
 
 config({ ssrFadeout: true })
 
@@ -72,7 +73,7 @@ class Infobox extends React.Component {
                 <h3 className="infoHeader">{this.props.heading}</h3>
                 <p>{this.props.children}</p>
                 {this.props.to !== undefined ? (
-                  <Link to={this.props.to}>Entdecken</Link>
+                  <FanyButton to={this.props.to} text="Entdecken"/>
                 ) : null}
               </div>
             </Bounce>

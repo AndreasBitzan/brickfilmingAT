@@ -9,6 +9,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import Highlightreel from "../static/BestOfWeb.mp4"
+import FancyButton from "../components/fancybutton"
 
 const HeaderPlayer = props => {
   return (
@@ -54,9 +55,7 @@ const Title = props => {
         </Textfit>
       </h1>
       {props.btnTitle !== undefined ? (
-        <AnchorLink offset="60" href="#entdecken">
-          {props.btnTitle}
-        </AnchorLink>
+        <FancyButton to="#entdecken" text={props.btnTitle} />
       ) : null}
     </div>
   )

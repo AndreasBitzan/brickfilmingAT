@@ -62,9 +62,6 @@ h1 {
   float: right;
   font-size: 1.2vw;
 }
-.titleContent a:hover {
-  font-weight: 600;
-}
 
 .fullscreenHeader {
   height: 100%;

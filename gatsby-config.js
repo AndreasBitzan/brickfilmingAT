@@ -38,6 +38,12 @@ module.exports = {
       families: ['Noto Sans', 'Inconsolata']
         }
       }
+    },
+    {
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        url: `https://bitzan-kaernten-guide.at/graphql`,
+      },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

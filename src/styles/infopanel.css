@@ -48,8 +48,9 @@
   margin: 10px;
 }
 .infoBox a {
-  float: right;
-  margin: 20px 0 0 0;
+ position: absolute;
+ right: 1rem;
+ bottom: 1rem;
 }
 .infoWindow p,
 .fancyInfoWindow p {
