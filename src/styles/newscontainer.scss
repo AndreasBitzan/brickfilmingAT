@@ -63,12 +63,20 @@
             border-right: none;
             border-bottom: 2px solid white;
         }
+        &__posting__content *{
+            width: 100%;
+        }
+
+        figure{
+            margin: 0;
+        }
     }
 }
 
 @media only screen and (max-width: 450px){
     .news-container{
         &__posting{
+            margin: 0;
             &__date{
 
     
@@ -76,7 +84,7 @@
                 
                 &__day{
                     padding-right: 0.5rem;
-                    font-size: 3rem;
+                    font-size: 7rem;
                 }
             }
         }

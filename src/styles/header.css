@@ -1,7 +1,6 @@
-header {
-  margin-top: 20px;
-}
+
 .gridHeader {
+  margin-top: 5rem;
   display: grid;
   grid-template-rows: 100%;
   grid-template-columns: repeat(10, 1fr);
@@ -35,10 +34,27 @@ h1 {
 .titleSection {
   box-shadow: 5px 0px 10px var(--main-dark-highlight-color);
   text-align: center;
+  width: 100%;
+  display: flex;
+  place-items: center;
+
 }
 
 .titleContent {
-  padding: 40% 16% 30% 16%;
+  display: block;
+  width: 100%;
+  padding: 2rem;
+
+}
+.titleContent .firstLine{
+  font-size: 5vw;
+}
+.titleContent .secondLine{
+  font-size: 5vw;
+}
+.titleContent span{
+  display: inline-block;
+  width: 100%;
 }
 
 .video {
@@ -126,4 +142,43 @@ h1 {
   color: darkgrey;
   right: 5%;
   bottom: 0;
+}
+
+
+@media only screen and (max-width: 580px){
+
+  .gridHeader {
+    position: relative;
+    margin-top: 5rem;
+  }
+
+  .rightStyleVideo, .leftStyleVideo{
+    grid-column-start: 1;
+    grid-column-end: 11;
+  }
+  .leftStyleTitle, .rightStyleTitle{
+    position: absolute;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+  }
+  .titleContent{
+    padding: 1rem !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 85%;
+  }
+  .titleContent a{
+    font-size: 0.7rem;
+  }
+  .titleContent .firstLine{
+    font-size: 7vw;
+  }
+  .titleContent .secondLine{
+    font-size: 9vw;
+  }
+
 }

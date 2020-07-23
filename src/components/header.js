@@ -1,5 +1,6 @@
 import React from "react"
 import "../styles/header.css"
+import "../styles/global.css"
 import { Textfit } from "react-textfit"
 import "../../node_modules/video-react/dist/video-react.css"
 import { Player, ControlBar, PlayToggle } from "video-react"
@@ -7,7 +8,6 @@ import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"
-import AnchorLink from "react-anchor-link-smooth-scroll"
 import Highlightreel from "../static/BestOfWeb.mp4"
 import FancyButton from "../components/fancybutton"
 
@@ -47,12 +47,13 @@ const Title = props => {
   return (
     <div className="titleContent">
       <h1>
-        <Textfit mode="single">
-          <span className="firstLine">{props.firstLine}</span>
-        </Textfit>
-        <Textfit mode="single" forceSingleModeWidth={true}>
-          <span className="secondLine">{props.secondLine}</span>
-        </Textfit>
+        <span className="firstLine">{props.firstLine}</span>
+        {props.secondLine !== undefined ? (
+          <>
+            <br />
+            <span className="secondLine">{props.secondLine}</span>
+          </>
+        ) : null}
       </h1>
       {props.btnTitle !== undefined ? (
         <FancyButton to="#entdecken" text={props.btnTitle} />
@@ -119,7 +120,11 @@ class PageHeader extends React.Component {
       return (
         <header className="gridHeader">
           {this.props.isTitleLeft ? null : (
-            <Img alt="Titelbild" fluid={this.props.imgData} className="leftStyleVideo" />
+            <Img
+              alt="Titelbild"
+              fluid={this.props.imgData}
+              className="leftStyleVideo"
+            />
           )}
           <section
             className={[
@@ -134,7 +139,11 @@ class PageHeader extends React.Component {
             />
           </section>
           {this.props.isTitleLeft ? (
-            <Img alt="Titelbild" fluid={this.props.imgData} className="rightStyleVideo" />
+            <Img
+              alt="Titelbild"
+              fluid={this.props.imgData}
+              className="rightStyleVideo"
+            />
           ) : null}
         </header>
       )
@@ -150,10 +159,19 @@ class PageHeader extends React.Component {
 
           <h1 className="fullscreenTitle">{this.props.title}</h1>
           {this.props.layer1 !== undefined ? (
-            <Img imgStyle={{ pointerEvents: 'none' }} alt="Die Kulisse" className="imgLayer layer1" fluid={this.props.layer1} />
+            <Img
+              imgStyle={{ pointerEvents: "none" }}
+              alt="Die Kulisse"
+              className="imgLayer layer1"
+              fluid={this.props.layer1}
+            />
           ) : null}
           {this.props.layer2 !== undefined ? (
-            <Img alt="Der Vordergrund der Kulisse" className="imgLayer layer2" fluid={this.props.layer2} />
+            <Img
+              alt="Der Vordergrund der Kulisse"
+              className="imgLayer layer2"
+              fluid={this.props.layer2}
+            />
           ) : null}
           {this.props.leftTo !== undefined ? (
             <AniLink
