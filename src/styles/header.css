@@ -48,13 +48,13 @@ h1 {
 }
 .titleContent .firstLine{
   font-size: 5vw;
+  display: inline-block;
 }
 .titleContent .secondLine{
   font-size: 5vw;
 }
 .titleContent span{
-  display: inline-block;
-  width: 100%;
+  padding: 0.5rem;
 }
 
 .video {
@@ -168,8 +168,13 @@ h1 {
   }
   .titleContent{
     padding: 1rem !important;
-    background-color: rgba(0, 0, 0, 0.5);
     width: 85%;
+  }
+  .titleContent h1 span {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .titleContent .secondLine {
+    padding-top: 0;
   }
   .titleContent a{
     font-size: 0.7rem;

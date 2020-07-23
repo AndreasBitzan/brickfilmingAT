@@ -1,7 +1,7 @@
 
 $menu-color: var(--main-dark-color);
-$burger-height: 2rem;
-$burger-width: 3rem;
+$burger-height: 1.5rem;
+$burger-width: 2rem;
 $menu-height: 5rem;
 
 .navList {
@@ -53,7 +53,7 @@ $menu-height: 5rem;
     opacity: 1;
     width: 100%;
     border-radius: 2px;
-    height: calc((#{$burger-height} * 0.6) / 3);
+    height: calc((#{$burger-height} * 0.6) / 5);
     background-color: white;
     transition: transform 0.4s ease-in-out, opacity 0.2s linear;
     transform-origin: center;
@@ -65,7 +65,7 @@ $menu-height: 5rem;
     &:nth-child(2) {
       position: absolute;
       top: calc(
-        ((0.4 * #{$burger-height}) / 2) + ((#{$burger-height} * 0.6) / 3)
+        ((0.4 * #{$burger-height}) / 1.3) + ((#{$burger-height} * 0.6) / 5)
       );
     }
     &:last-child {
@@ -85,7 +85,7 @@ $menu-height: 5rem;
 }
 
 .burger-checkbox:checked ~ label .navList__burger__bar:first-child {
-  transform: translatex(3px) translatey(12px) rotate(45deg);
+  transform: translatex(3px) translatey(9px) rotate(45deg);
 }
 .burger-checkbox:checked ~ label .navList__burger__bar:last-child {
   transform: translatex(2px) translatey(-12px) rotate(-45deg);
