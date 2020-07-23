@@ -7,7 +7,7 @@ class SimpleSlider extends React.Component {
   settings = {
     infinite: true,
     speed: 500,
-    arrows: false,
+    arrows: true,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,

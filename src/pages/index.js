@@ -11,6 +11,7 @@ import FancyInfoPanel from "../components/fancyinfopanel"
 import InfoWindow from "../components/infowindow"
 import Fade from "react-reveal/Fade"
 import NewsContainer from "../components/newscontainer"
+import FilmHighlights from "../components/filmhighlights"
 
 const IndexPage = props => {
   return (
@@ -40,9 +41,9 @@ const IndexPage = props => {
         sind dabei ca. 15 Bilder notwendig! Erfahre hier mehr darüber, wie ein
         Film entsteht!
       </InfoPanel>
-    
-
-      <SubHeader title="Unsere Filme" id="242" />
+      <SubHeader title="Unsere Highlights" />
+      <FilmHighlights />
+      <SubHeader title="Alle Filme" id="242" />
       <SliderBox>
         <SingleSlide
           imgData={props.data.slider1.childImageSharp.fluid}

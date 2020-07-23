@@ -51,6 +51,9 @@ const Template = props => {
             name="Filme"
             isActive={props.isActive === "filme" ? true : false}
           >
+            <Link to="/highwaytoheaven/"><Img fluid={GetFluidByName("highwaytoheaven").node.childImageSharp.fluid} />
+            <div className="thumbnail__overlay"><p>Highway to Heaven</p></div>
+            </Link>
             <Link to="/mordindermanege/"><Img fluid={GetFluidByName("mordindermanege").node.childImageSharp.fluid} />
             <div className="thumbnail__overlay"><p>Mord i. d. Manege</p></div>
             </Link>
@@ -58,7 +61,6 @@ const Template = props => {
             <div className="thumbnail__overlay"><p>Roll</p></div></Link>
             <Link to="/endangered/"><Img fluid={GetFluidByName("endangered").node.childImageSharp.fluid} />
             <div className="thumbnail__overlay"><p>Endangered</p></div></Link>
-            <Link to="/endangered/"><Img fluid={GetFluidByName("timeforsale").node.childImageSharp.fluid} /></Link>
           </DropDown>
 
           <Navlink

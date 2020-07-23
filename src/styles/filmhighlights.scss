@@ -1,0 +1,41 @@
+.filmhighlights{
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 30rem;
+    background-color: var(--main-dark-color);
+
+    a{
+        overflow-y: hidden;
+        padding: 0;
+        border-radius: unset;
+        background-color: unset;
+        transition: transform 0.3s ease-in-out, opacity 0.1s ease;
+        transform: scale(1);
+        opacity: 0.8;
+
+        > div {
+            height: 100%;
+        }
+        &:hover{
+            transform: scale(1.1);
+            z-index: 50;
+            opacity: 1;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1200px){
+    .filmhighlights{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 30rem 30rem;
+    }
+}
+
+@media only screen and (max-width: 580px){
+    .filmhighlights{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 20rem 20rem 20rem;
+    }
+}
