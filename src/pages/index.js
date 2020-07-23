@@ -43,29 +43,7 @@ const IndexPage = props => {
       </InfoPanel>
       <SubHeader title="Unsere Highlights" />
       <FilmHighlights />
-      <SubHeader title="Alle Filme" id="242" />
-      <SliderBox>
-        <SingleSlide
-          imgData={props.data.slider1.childImageSharp.fluid}
-          link="https://www.youtube.com/watch?v=HNeL8xOAewY"
-        />
-        <SingleSlide
-          imgData={props.data.slider2.childImageSharp.fluid}
-          link="https://www.youtube.com/watch?v=4jvMesae8Dk"
-        />
-        <SingleSlide
-          imgData={props.data.slider3.childImageSharp.fluid}
-          link="https://www.youtube.com/watch?v=-mEviW2DZyU"
-        />
-        <SingleSlide
-          imgData={props.data.slider4.childImageSharp.fluid}
-          link="https://www.youtube.com/watch?v=bqDodFboKxs"
-        />
-        <SingleSlide
-          imgData={props.data.slider5.childImageSharp.fluid}
-          link="https://www.youtube.com/watch?v=-Vuz0xVFeuQ"
-        />
-      </SliderBox>
+
       <SubHeader title="Workshops / Kontakt" />
 
       <FancyInfoPanel imgData={props.data.bgImg.childImageSharp.fluid}>
@@ -94,6 +72,29 @@ const IndexPage = props => {
           </InfoWindow>
         </Fade>
       </FancyInfoPanel>
+      <SubHeader title="Alle Filme" id="242" />
+      <SliderBox>
+        <SingleSlide
+          imgData={props.data.slider1.childImageSharp.fluid}
+          link="https://www.youtube.com/watch?v=HNeL8xOAewY"
+        />
+        <SingleSlide
+          imgData={props.data.slider2.childImageSharp.fluid}
+          link="https://www.youtube.com/watch?v=4jvMesae8Dk"
+        />
+        <SingleSlide
+          imgData={props.data.slider3.childImageSharp.fluid}
+          link="https://www.youtube.com/watch?v=-mEviW2DZyU"
+        />
+        <SingleSlide
+          imgData={props.data.slider4.childImageSharp.fluid}
+          link="https://www.youtube.com/watch?v=bqDodFboKxs"
+        />
+        <SingleSlide
+          imgData={props.data.slider5.childImageSharp.fluid}
+          link="https://www.youtube.com/watch?v=-Vuz0xVFeuQ"
+        />
+      </SliderBox>
     </Template>
   )
 }

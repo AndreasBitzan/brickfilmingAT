@@ -2,7 +2,7 @@
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 30rem;
+    grid-template-rows: 35rem;
     background-color: var(--main-dark-color);
 
     a{
@@ -21,6 +21,7 @@
             transform: scale(1.1);
             z-index: 50;
             opacity: 1;
+            box-shadow: 0 0 10px white;
         }
     }
 
