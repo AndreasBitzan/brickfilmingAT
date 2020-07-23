@@ -1,0 +1,123 @@
+
+$menu-color: var(--main-dark-color);
+$burger-height: 2rem;
+$burger-width: 3rem;
+$menu-height: 5rem;
+
+.navList {
+  padding: 0.2rem 1rem;
+  position: fixed;
+  height: $menu-height;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $menu-color;
+  z-index: 100;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    &__list {
+      visibility: visible;
+      list-style-type: none;
+      margin: 0;
+      display: flex;
+      li {
+        padding: 1rem;
+        text-align: center;
+      
+        a {
+          text-decoration: none;
+          color: white;
+          &:hover {
+            transition: all 0.2s ease;
+            padding-bottom: 3px;
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+  &__burger {
+    cursor: pointer;
+    position: relative;
+    display: none;
+    width: $burger-width;
+    height: $burger-height;
+  }
+  span {
+    position: relative;
+    display: block;
+    opacity: 1;
+    width: 100%;
+    border-radius: 2px;
+    height: calc((#{$burger-height} * 0.6) / 3);
+    background-color: white;
+    transition: transform 0.4s ease-in-out, opacity 0.2s linear;
+    transform-origin: center;
+
+    &:first-child {
+      position: absolute;
+      top: 0;
+    }
+    &:nth-child(2) {
+      position: absolute;
+      top: calc(
+        ((0.4 * #{$burger-height}) / 2) + ((#{$burger-height} * 0.6) / 3)
+      );
+    }
+    &:last-child {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+.activeLink {
+  border-bottom: 1px solid white !important;
+  padding-bottom: 3px;
+}
+
+#burger-checkbox {
+  display: none;
+}
+
+.burger-checkbox:checked ~ label .navList__burger__bar:first-child {
+  transform: translatex(3px) translatey(12px) rotate(45deg);
+}
+.burger-checkbox:checked ~ label .navList__burger__bar:last-child {
+  transform: translatex(2px) translatey(-12px) rotate(-45deg);
+}
+.burger-checkbox:checked ~ label .navList__burger__bar:nth-child(2) {
+  opacity: 0;
+}
+.burger-checkbox:checked ~ label + ul {
+  visibility: visible;
+  transform: translatex(0);
+  opacity: 1;
+}
+
+@media only screen and (max-width: 580px) {
+  .navList__burger {
+    display: block;
+  }
+
+  .navList__content__list {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    padding: 0;
+    font-size: 2rem;
+    top: $menu-height;
+    background: $menu-color;
+    transition: all 0.6s ease-in-out;
+    transform: translatex(100%);
+  }
+}
+

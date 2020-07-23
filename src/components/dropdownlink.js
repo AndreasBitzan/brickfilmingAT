@@ -12,7 +12,7 @@ class DropDown extends React.Component{
 
 
       let subMenu=document.querySelector(".dropdown-content");
-      let mainMenu=document.querySelector("#navList");
+      let mainMenu=document.querySelector(".navList__content__list");
       if(window.innerWidth>570){
       subMenu.style.width=`${mainMenu.clientWidth}px`;
       }

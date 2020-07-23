@@ -1,6 +1,6 @@
 import React from "react"
 import "../styles/global.css"
-import "../styles/menubar.css"
+import "../styles/menubar.scss"
 import {Link} from "gatsby"
 
 const alerter = () => {
@@ -11,23 +11,26 @@ const alerter = () => {
 const MenuLogo = () => {
   return (
     <div className="Logo">
-      <Link to="/">Brickfilms</Link>
+      <Link to="/">Brickfilms.at</Link>
     </div>
   )
 }
 
 const NavList = ({ children }) => {
   return (
-    <nav className="navListe">
+    <nav class="navList">
+    <div class="navList__content content-container">
       <MenuLogo />
-
-      <label onClick={() => alerter()} htmlFor="toggle">
-        &#9776;
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox" />
+      <label for="burger-checkbox" class="navList__burger">
+        <span class="navList__burger__bar"></span>
+        <span class="navList__burger__bar"></span>
+        <span class="navList__burger__bar"></span>
       </label>
-
-      <input type="checkbox" className="toggle" id="toggle"/>
-
-      <ul id="navList">{children}</ul>
+      <ul class="navList__content__list">
+       {children}
+      </ul>
+    </div>
     </nav>
   )
 }
