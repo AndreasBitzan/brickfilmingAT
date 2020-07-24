@@ -3,7 +3,7 @@ import "../styles/fancybutton.scss"
 
 const FancyButton = (props) => {
   return (
-    <a href={props.to} title={props.text} class="btn">
+    <a href={props.to} title={props.text} className="btn">
       <span>
         <span>
           <span>{props.text}</span>

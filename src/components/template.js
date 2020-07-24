@@ -7,7 +7,6 @@ import Img from "gatsby-image"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Template = props => {
-  console.log(props)
   let mainChildren = []
   for (let i = 0; i < props.children.length; i++) {
     if (i > 1) {
@@ -35,7 +34,7 @@ const Template = props => {
     }
   `)
   const GetFluidByName = imgName => {
-    return data.allThumbnails.edges.find(currentImg => currentImg.node.name == imgName)
+    return data.allThumbnails.edges.find(currentImg => currentImg.node.name === imgName)
   }
   return (
     <div id="content">
@@ -75,7 +74,7 @@ const Template = props => {
             isActive={props.isActive === "anfragen" ? true : false}
           />
 
-          <Navlink name="home" to="/" isActive={props.isActive==undefined ? true : false} />
+          <Navlink name="home" to="/" isActive={props.isActive===undefined ? true : false} />
         </MenuBar>
     
       {props.children[0]}

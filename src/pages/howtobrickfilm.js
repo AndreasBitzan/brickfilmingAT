@@ -5,7 +5,6 @@ import SubHeader from "../components/subheader";
 import SliderBox from "../components/slidebox";
 import ContentBox from "../components/contentBox";
 import InfoPanel from "../components/infopanel";
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import InteractiveBox from "../components/interactiveBox";
 import FancyInfoPanel from "../components/fancyinfopanel";

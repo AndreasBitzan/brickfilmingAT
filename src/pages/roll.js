@@ -1,8 +1,6 @@
 import React from "react";
 import Header from "../components/header";
 import SubHeader from "../components/subheader";
-import SliderBox from "../components/slidebox";
-import SingleSlide from "../components/singleslide";
 import Template from "../components/template";
 import { graphql } from "gatsby";
 import FilmdataBox from "../components/filmdataBox";
@@ -14,10 +12,7 @@ import BtsGallery from "../components/btsgallery"
 
 
 const Content = (props)=>{
-  const images = Array.from(props.data.allImages.edges);
-  const allSlides = images.map(({ node }) => {
-    return (<SingleSlide imgData={node.childImageSharp.fluid} />)
-  })
+
     return(
         
       <Template isActive="filme" thumbnails={props.data.allThumbnails.edges}>

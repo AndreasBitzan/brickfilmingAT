@@ -152,6 +152,10 @@ padding-right: 2rem;
 
 @media only screen and (max-width: 580px){
 
+  .fullscreenHeader {
+    height: 25rem;
+  }
+
   .gridHeader {
     position: relative;
     margin-top: 5rem;

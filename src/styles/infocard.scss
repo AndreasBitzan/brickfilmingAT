@@ -1,0 +1,36 @@
+.infocard{
+    max-width: 20rem;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 3rem 15rem 3rem;
+    background-color: var(--main-bg-highlight-color);
+    padding: 1rem;
+    margin: 1rem;
+
+    &__heading{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        text-align: center;
+    }
+    &__content{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    &__link{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    
+    }
+}
+@media only screen and (max-width: 400px){
+    .infocard{
+        grid-template-rows: 3rem 20rem 3rem;
+
+    }
+}

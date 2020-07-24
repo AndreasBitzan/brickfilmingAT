@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Template from "../components/template"
 import Header from "../components/header"
 import SubHeader from "../components/subheader"
@@ -12,6 +12,7 @@ import InfoWindow from "../components/infowindow"
 import Fade from "react-reveal/Fade"
 import NewsContainer from "../components/newscontainer"
 import FilmHighlights from "../components/filmhighlights"
+import InfoCard from "../components/infocard"
 
 const IndexPage = props => {
   return (
@@ -48,28 +49,27 @@ const IndexPage = props => {
 
       <FancyInfoPanel imgData={props.data.bgImg.childImageSharp.fluid}>
         <Fade bottom delay={200}>
-          <InfoWindow heading="Wir machen Workshops!" to="workshops">
-            <p>
+          <InfoCard heading="Wir machen Workshops!" to="/workshops">
+      
               Neben unseren Filmen halten wir auch gelengentlich Workshops ab.
               Dabei bringen wir Kindern und Jugendlichen das Brickfilmen bei. Ob
               normale Gehanimationen oder Fortgeschrittene Bewegungen, für jeden
               ist etwas dabei. Erfahre hier mehr wie wo und vor allem wann.
-            </p>
-          </InfoWindow>
+         
+          </InfoCard>
         </Fade>
         <Fade bottom delay={200}>
-          <InfoWindow
+          <InfoCard
             heading="Kontaktiere uns!"
-            text="This is a test"
-            to="kontakt"
+            to="/kontakt"
           >
-            <p>
+     
               Wir stehen gerne für jegliche Art von Fragen zur Verfügung. Sei es
               eine Frage zum Brickfilmen, eine Workshops Anfrage oder eine
               Kontaktaufnahme bezüglich einer Zusammenarbeit! Einfach hier
               klicken.
-            </p>
-          </InfoWindow>
+          
+          </InfoCard>
         </Fade>
       </FancyInfoPanel>
       <SubHeader title="Alle Filme" id="242" />

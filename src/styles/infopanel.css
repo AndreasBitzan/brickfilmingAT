@@ -47,10 +47,9 @@
   max-width: 450px;
   margin: 10px;
 }
-.infoBox a {
- position: absolute;
- right: 1rem;
- bottom: 1rem;
+.infoBox a, .videoPanel-infos a {
+  margin-top: 0.5rem;
+float: right;
 }
 .infoWindow p,
 .fancyInfoWindow p {

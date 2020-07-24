@@ -14,7 +14,7 @@ class FilmHighlights extends React.Component {
         <Link to="/mordindermanege" ><Img fluid={this.props.data.mordindermanege.childImageSharp.fluid} /></Link>
         <Link to="/roll" ><Img fluid={this.props.data.roll.childImageSharp.fluid} /></Link>
         <Link to="/endangered" ><Img fluid={this.props.data.endangered.childImageSharp.fluid} /></Link>
-        <Link to="/endangered" ><Img fluid={this.props.data.timeforsale.childImageSharp.fluid} /></Link>
+        <Link to="/timeforsale" ><Img fluid={this.props.data.timeforsale.childImageSharp.fluid} /></Link>
         <Link to="/endangered" ><Img fluid={this.props.data.knighttimes.childImageSharp.fluid} /></Link>
     </section>
     )  
